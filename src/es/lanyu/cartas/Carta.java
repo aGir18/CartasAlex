@@ -1,26 +1,26 @@
 package es.lanyu.cartas;
 
-public class Carta {
+public class Carta implements Comparable<Carta> {
 
 	private String palo;
 	private int numeroCarta;
 	private String figuraCarta;
-	
+
 	public int getNumeroCarta() {
 		return numeroCarta;
 	}
-	
+
 	public String getFiguraCarta() {
 		return figuraCarta;
 	}
-	
+
 	public String getPalo() {
 		return palo;
 	}
-	
+
 	public Carta(String palo, int numeroCarta) {
 		this.palo = palo;
-		this.numeroCarta = numeroCarta;		
+		this.numeroCarta = numeroCarta;
 	}
 
 	public Carta(String palo, String figuraCarta) {
@@ -29,15 +29,56 @@ public class Carta {
 	}
 
 	@Override
-	public String toString() {
-			String textoMostrar = "";
-			if (getNumeroCarta() == 0) {
-				textoMostrar = getFiguraCarta() + " de " + getPalo();
+	public int compareTo(Carta cartaComparar) {
+		int solucion = 0;
+		if (this.getPalo() == cartaComparar.getPalo()) {
+			if (this.getNumeroCarta() == 0 && cartaComparar.getNumeroCarta() == 0) {
+				if (this.getFiguraCarta() == cartaComparar.getFiguraCarta()) {
+					solucion = 0;
+				} else if (this.getFiguraCarta() == "Sota") {
+					solucion = -1;
+				} else if (this.getFiguraCarta() == "Rey") {
+					solucion = 1;
+				} else if (this.getFiguraCarta() == "Caballo" && cartaComparar.getFiguraCarta() == "Rey") {
+					solucion = -1;
+				} else if (this.getFiguraCarta() == "Caballo" && cartaComparar.getFiguraCarta() == "Sota") {
+					solucion = 1;
+				}		
+				
 			} else {
-				textoMostrar = getNumeroCarta() + " de " + getPalo();
-			}
+				if (this.getNumeroCarta() == cartaComparar.getNumeroCarta()) {
+					solucion = 0;
+				} else if (this.getNumeroCarta() < cartaComparar.getNumeroCarta()) {
+					solucion = -1;
+				} else {
+					solucion = 1;
+				}
+				}
+		} else if (this.getPalo() == "BASTOS") {
+			solucion = -1;
+		} else if (this.getPalo() == "COPAS" && cartaComparar.getPalo() == "BASTOS") {
+			solucion = 1;
+		} else if(this.getPalo() == "COPAS" && cartaComparar.getPalo() != "BASTOS") {
+			solucion = -1;
+		} else if(this.getPalo() == "ESPADAS" && cartaComparar.getPalo() == "OROS") {
+			solucion = -1;
+		} else if(this.getPalo() == "ESPADAS" && cartaComparar.getPalo() != "OROS") {
+			solucion = 1;
+		}
 		
+		return solucion;
+	}
+
+	@Override
+	public String toString() {
+		String textoMostrar = "";
+		if (getNumeroCarta() == 0) {
+			textoMostrar = getFiguraCarta() + " de " + getPalo();
+		} else {
+			textoMostrar = getNumeroCarta() + " de " + getPalo();
+		}
+
 		return textoMostrar;
 	}
-	
+
 }

@@ -1,7 +1,5 @@
 package es.lanyu.cartas;
 
-
-
 public class Baraja extends GrupoCartas {
 
 	String[] palosBarajaEspañola = { "OROS", "ESPADAS", "COPAS", "BASTOS" };
@@ -10,6 +8,7 @@ public class Baraja extends GrupoCartas {
 	private final String numeroDiezEspañola = "Sota";
 	private final String numeroOnceEspañola = "Caballo";
 	private final String numeroDoceEspañola = "Rey";
+
 	public void crearBarajaEspañola() {
 		for (int i = 0; i < palosBarajaEspañola.length; i++) {
 			this.getCartasEnBaraja().add(new Carta(palosBarajaEspañola[i], numeroUnoEspañola));
@@ -22,14 +21,23 @@ public class Baraja extends GrupoCartas {
 		}
 	}
 
-	@Override
-	public String toString() {
-			String valorFinal = "";
-			for (Carta carta : cartas) {
-				valorFinal += carta.toString() + "\n";
+	private Carta robar(Carta cartaRobar) {
+		Carta cartaDevuelta = null;
+		if (getCartasEnBaraja().isEmpty()) {
+			cartaDevuelta = null;
+		} else {
+			if (getCartasEnBaraja().contains(cartaRobar)) {
+				cartaDevuelta = cartaRobar;
+				getCartasEnBaraja().remove(cartaRobar);
+			} else if (getCartasEnBaraja().contains(cartaRobar) == false){
+				cartaDevuelta = null;
+			} else if (cartaRobar == null) {
+//				cartaDevuelta = getCartasEnBaraja(get(0));
+//				Me falta por terminar
 			}
-		
-		return valorFinal;
+		}
+					
+		return cartaDevuelta;
 	}
 
 }
