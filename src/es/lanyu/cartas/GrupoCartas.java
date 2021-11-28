@@ -23,29 +23,28 @@ public class GrupoCartas {
 	public boolean estaDentro(Carta cartaComprobar) {
 		boolean respuesta = false;
 		for (Carta carta : getCartasEnBaraja()) {
-			if (cartaComprobar.getPalo() == carta.getPalo() && cartaComprobar.getNumeroCarta() == carta.getNumeroCarta()) {
+			if (carta.equals(cartaComprobar)) {
 				respuesta = true;
 				break;
-			} else if (cartaComprobar.getPalo() == carta.getPalo() && cartaComprobar.getFiguraCarta() == carta.getFiguraCarta()){
-				respuesta = true;
-				break;
-			} else {
-				respuesta = false;
 			}
 		}
-				
-		return respuesta;  
+		
+		return respuesta;
 	}
 	
 	public Carta robarCarta(Carta cartaRobar) {
 		Carta encontrada = null;
+		int primeraPosicion = 0;
+		if (cartaRobar == null && getCartasEnBaraja().size() > 0) {
+			encontrada = getCartasEnBaraja().get(primeraPosicion);
+		}
 		for (Carta carta : getCartasEnBaraja()) {
 			if (carta.equals(cartaRobar)) {
 				encontrada = carta;
-				getCartasEnBaraja().remove(carta);
 				break;
 			}
 		}
+		getCartasEnBaraja().remove(encontrada);
 		
 		return encontrada;
 	}
@@ -59,26 +58,3 @@ public class GrupoCartas {
 		return valorFinal;
 	}
 }
-
-
-
-//public Carta robar(Carta cartaRobar) {
-//Carta cartaDevuelta = null;
-//if (getCartasEnBaraja().isEmpty()) {
-//	cartaDevuelta = null;
-//} else {
-//	if (getCartasEnBaraja().contains(cartaRobar)) {
-//		cartaDevuelta = cartaRobar;
-//		getCartasEnBaraja().remove(cartaRobar);
-//	} else if (getCartasEnBaraja().contains(cartaRobar) == false){
-//		cartaDevuelta = null;
-//	} else if (cartaRobar == null) {
-////		cartaDevuelta = getCartasEnBaraja(get(0));
-////		Me falta por terminar
-//	}
-//}
-//			
-//return cartaDevuelta;
-//}
-
-

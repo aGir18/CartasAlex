@@ -27,28 +27,21 @@ public class Juego {
 		mano01.getCartasEnBaraja().add(cuatroCopas);
 		mano01.getCartasEnBaraja().add(seisCopas);
 		mano01.getCartasEnBaraja().add(cincoCopas);
-		System.out.println(mano01);
-		mano01.barajar();
-		System.out.println(mano01);
-
-		System.out.println(mano01.estaDentro(tresCopas));
-		System.out.println(mano01.estaDentro(asBastos));
-		System.out.println(barajaEspañola.getCartasEnBaraja().get(47));
-		System.out.println(barajaEspañola.estaDentro(reyOros));
-		barajaEspañola.robarCarta(reyOros);
-		System.out.println(barajaEspañola.estaDentro(reyOros));
-		//NO ME FUNCIONA BIEN
 		
-		System.out.println(mano01.estaDentro(seisCopas));
+		System.out.println(mano01);
+		System.out.println("¿Está dentro el 5 de copas? " + mano01.estaDentro(cincoCopas));
+		System.out.println("¿Está dentro el 6 de copas? " + mano01.estaDentro(seisCopas));
 		mano01.robarCarta(seisCopas);
-		System.out.println(mano01.estaDentro(seisCopas));
-
-//		System.out.println(barajaEspañola.estaDentro(reyOros));
-//		System.lineSeparator();
-//		barajaEspañola.robar(reyOros);
-//		System.out.println(barajaEspañola.estaDentro(reyOros));
-
-//		
+		mano01.robarCarta(asBastos);
+		mano01.robarCarta(caballoEspadas);
+		mano01.robarCarta(cuatroCopas);
+		System.out.println("Tras robar 4 cartas queda así: ");
+		System.lineSeparator();
+		System.out.println(mano01);
+		System.out.println("¿Está dentro el 5 de copas? " + mano01.estaDentro(cincoCopas));
+		System.out.println("¿Está dentro el 6 de copas? " + mano01.estaDentro(seisCopas));
+		System.out.println(mano01.robarCarta(null));
+		
 //		System.out.println(barajaEspañola.estaDentro(cincoCopas));
 //		System.out.println(mano01.estaDentro(reyOros));
 //		System.out.println(asBastos.compareTo(reyOros));
