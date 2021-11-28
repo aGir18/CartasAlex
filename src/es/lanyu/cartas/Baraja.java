@@ -21,23 +21,6 @@ public class Baraja extends GrupoCartas {
 		}
 	}
 
-	private Carta robar(Carta cartaRobar) {
-		Carta cartaDevuelta = null;
-		if (getCartasEnBaraja().isEmpty()) {
-			cartaDevuelta = null;
-		} else {
-			if (getCartasEnBaraja().contains(cartaRobar)) {
-				cartaDevuelta = cartaRobar;
-				getCartasEnBaraja().remove(cartaRobar);
-			} else if (getCartasEnBaraja().contains(cartaRobar) == false){
-				cartaDevuelta = null;
-			} else if (cartaRobar == null) {
-//				cartaDevuelta = getCartasEnBaraja(get(0));
-//				Me falta por terminar
-			}
-		}
-					
-		return cartaDevuelta;
-	}
+
 
 }

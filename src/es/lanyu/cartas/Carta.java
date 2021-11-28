@@ -1,5 +1,7 @@
 package es.lanyu.cartas;
 
+import java.util.Objects;
+
 public class Carta implements Comparable<Carta> {
 
 	private String palo;
@@ -70,6 +72,24 @@ public class Carta implements Comparable<Carta> {
 	}
 
 	@Override
+	public int hashCode() {
+		return Objects.hash(figuraCarta, numeroCarta, palo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Carta other = (Carta) obj;
+		return Objects.equals(figuraCarta, other.figuraCarta) && numeroCarta == other.numeroCarta
+				&& Objects.equals(palo, other.palo);
+	}
+
+	@Override
 	public String toString() {
 		String textoMostrar = "";
 		if (getNumeroCarta() == 0) {
@@ -80,5 +100,4 @@ public class Carta implements Comparable<Carta> {
 
 		return textoMostrar;
 	}
-
 }

@@ -8,10 +8,11 @@ public class Juego {
 
 	public static void main(String[] args) {
 		Baraja barajaEspañola = new Baraja();
-		System.out.println(barajaEspañola);
 		barajaEspañola.crearBarajaEspañola();
+//		System.out.println(barajaEspañola);
 		System.lineSeparator();
-		barajaEspañola.barajar();
+//		barajaEspañola.barajar();
+//		System.out.println(barajaEspañola);
 		Carta asBastos = new Carta("BASTOS", "As");
 		Carta caballoEspadas = new Carta("ESPADAS", "Caballo");
 		Carta seisCopas = new Carta("COPAS", 6);
@@ -26,14 +27,33 @@ public class Juego {
 		mano01.getCartasEnBaraja().add(cuatroCopas);
 		mano01.getCartasEnBaraja().add(seisCopas);
 		mano01.getCartasEnBaraja().add(cincoCopas);
+		System.out.println(mano01);
+		mano01.barajar();
+		System.out.println(mano01);
+
+		System.out.println(mano01.estaDentro(tresCopas));
+		System.out.println(mano01.estaDentro(asBastos));
+		System.out.println(barajaEspañola.getCartasEnBaraja().get(47));
+		System.out.println(barajaEspañola.estaDentro(reyOros));
+		barajaEspañola.robarCarta(reyOros);
+		System.out.println(barajaEspañola.estaDentro(reyOros));
+		//NO ME FUNCIONA BIEN
 		
-		System.out.println(barajaEspañola.estaDentro(cincoCopas));
-		System.out.println(mano01.estaDentro(reyOros));
-		System.out.println(asBastos.compareTo(reyOros));
-		System.out.println(cuatroCopas.compareTo(asBastos));
-		System.out.println(seisCopas.compareTo(seisCopas));
-		System.out.println(seisCopas.compareTo(cincoCopas));
+		System.out.println(mano01.estaDentro(seisCopas));
+		mano01.robarCarta(seisCopas);
+		System.out.println(mano01.estaDentro(seisCopas));
 
+//		System.out.println(barajaEspañola.estaDentro(reyOros));
+//		System.lineSeparator();
+//		barajaEspañola.robar(reyOros);
+//		System.out.println(barajaEspañola.estaDentro(reyOros));
+
+//		
+//		System.out.println(barajaEspañola.estaDentro(cincoCopas));
+//		System.out.println(mano01.estaDentro(reyOros));
+//		System.out.println(asBastos.compareTo(reyOros));
+//		System.out.println(cuatroCopas.compareTo(asBastos));
+//		System.out.println(seisCopas.compareTo(seisCopas));
+//		System.out.println(seisCopas.compareTo(cincoCopas));
 	}
-
 }
