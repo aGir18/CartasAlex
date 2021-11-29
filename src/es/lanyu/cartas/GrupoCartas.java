@@ -6,13 +6,13 @@ import java.util.List;
 
 public class GrupoCartas {
 
-	private List<Carta> cartas = new ArrayList<>();
+	private List<CartaImpl> cartas = new ArrayList<>();
 
 	public GrupoCartas() {
 		super();
 	}
 
-	public List<Carta> getCartasEnBaraja() {
+	public List<CartaImpl> getCartasEnBaraja() {
 		return cartas;
 	}
 
@@ -47,6 +47,10 @@ public class GrupoCartas {
 		getCartasEnBaraja().remove(encontrada);
 		
 		return encontrada;
+	}
+	
+	public void ordenar() {
+		cartas.sort(null);
 	}
 
 	public String toString() {

@@ -11,13 +11,13 @@ public class Baraja extends GrupoCartas {
 
 	public void crearBarajaEspañola() {
 		for (int i = 0; i < palosBarajaEspañola.length; i++) {
-			this.getCartasEnBaraja().add(new Carta(palosBarajaEspañola[i], numeroUnoEspañola));
+			this.getCartasEnBaraja().add(new CartaImpl(palosBarajaEspañola[i], numeroUnoEspañola));
 			for (int j = 2; j <= numeroCartasPaloEspañolaSinFiguras; j++) {
-				this.getCartasEnBaraja().add(new Carta(palosBarajaEspañola[i], j));
+				this.getCartasEnBaraja().add(new CartaImpl(palosBarajaEspañola[i], j));
 			}
-			this.getCartasEnBaraja().add(new Carta(palosBarajaEspañola[i], numeroDiezEspañola));
-			this.getCartasEnBaraja().add(new Carta(palosBarajaEspañola[i], numeroOnceEspañola));
-			this.getCartasEnBaraja().add(new Carta(palosBarajaEspañola[i], numeroDoceEspañola));
+			this.getCartasEnBaraja().add(new CartaImpl(palosBarajaEspañola[i], numeroDiezEspañola));
+			this.getCartasEnBaraja().add(new CartaImpl(palosBarajaEspañola[i], numeroOnceEspañola));
+			this.getCartasEnBaraja().add(new CartaImpl(palosBarajaEspañola[i], numeroDoceEspañola));
 		}
 	}
 

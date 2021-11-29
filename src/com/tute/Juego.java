@@ -2,6 +2,7 @@ package com.tute;
 
 import es.lanyu.cartas.Baraja;
 import es.lanyu.cartas.Carta;
+import es.lanyu.cartas.CartaImpl;
 import es.lanyu.cartas.Mano;
 
 public class Juego {
@@ -13,13 +14,13 @@ public class Juego {
 		System.lineSeparator();
 //		barajaEspañola.barajar();
 //		System.out.println(barajaEspañola);
-		Carta asBastos = new Carta("BASTOS", "As");
-		Carta caballoEspadas = new Carta("ESPADAS", "Caballo");
-		Carta seisCopas = new Carta("COPAS", 6);
-		Carta cincoCopas = new Carta("COPAS", 5);
-		Carta cuatroCopas = new Carta("COPAS", 4);
-		Carta tresCopas = new Carta("COPAS", 3);
-		Carta reyOros = new Carta("OROS", "Rey");
+		CartaImpl asBastos = new CartaImpl("BASTOS", "As");
+		CartaImpl caballoEspadas = new CartaImpl("ESPADAS", "Caballo");
+		CartaImpl seisCopas = new CartaImpl("COPAS", 6);
+		CartaImpl cincoCopas = new CartaImpl("COPAS", 5);
+		CartaImpl cuatroCopas = new CartaImpl("COPAS", 4);
+		Carta tresCopas = new CartaImpl("COPAS", 3);
+		Carta reyOros = new CartaImpl("OROS", "Rey");
 
 		Mano mano01 = new Mano();
 		mano01.getCartasEnBaraja().add(asBastos);
@@ -41,6 +42,13 @@ public class Juego {
 		System.out.println("¿Está dentro el 5 de copas? " + mano01.estaDentro(cincoCopas));
 		System.out.println("¿Está dentro el 6 de copas? " + mano01.estaDentro(seisCopas));
 		System.out.println(mano01.robarCarta(null));
+
+		System.lineSeparator();
+		System.out.println(barajaEspañola);
+		barajaEspañola.barajar();
+		System.out.println(barajaEspañola);
+		barajaEspañola.ordenar();
+		System.out.println(barajaEspañola);
 		
 //		System.out.println(barajaEspañola.estaDentro(cincoCopas));
 //		System.out.println(mano01.estaDentro(reyOros));
