@@ -8,8 +8,6 @@ public class Mano extends GrupoCartas implements Comparator<Mano>{
 
 	public String contarMayorPalo() {
 		String paloMasCartas = "";
-		this.getCartasEnBaraja().get
-		
 		return paloMasCartas;
 	}
 		
