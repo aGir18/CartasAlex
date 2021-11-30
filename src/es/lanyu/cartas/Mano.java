@@ -1,7 +1,24 @@
 package es.lanyu.cartas;
 
-public class Mano extends GrupoCartas{
+import java.util.Comparator;
 
-	public Mano() {	};
+public class Mano extends GrupoCartas implements Comparator<Mano>{
+
+	public Mano() {	}
+
+	public String contarMayorPalo() {
+		String paloMasCartas = "";
+		this.getCartasEnBaraja().get
+		
+		return paloMasCartas;
+	}
+		
+	@Override
+	public int compare(Mano o1, Mano o2) {
+		
+		
+		
+		return 0;
+	};
 
 }

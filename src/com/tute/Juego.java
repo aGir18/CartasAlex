@@ -50,6 +50,10 @@ public class Juego {
 		barajaEspañola.ordenar();
 		System.out.println(barajaEspañola);
 		
+		Baraja barajaAmericana = new Baraja();
+		System.out.println(barajaAmericana.getCartasEnBaraja().size());
+		
+		
 //		System.out.println(barajaEspañola.estaDentro(cincoCopas));
 //		System.out.println(mano01.estaDentro(reyOros));
 //		System.out.println(asBastos.compareTo(reyOros));

@@ -62,6 +62,4 @@ public class CartaImpl implements Carta {
 
 		return textoMostrar;
 	}
-
-
 }

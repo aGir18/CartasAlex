@@ -8,6 +8,8 @@ public interface Carta extends Comparable<Carta>{
 
 	String getPalo();
 
+	
+	
 	default int compareTo(Carta cartaComparar) {
 		int solucion = 0;
 		if (this.getPalo() == cartaComparar.getPalo()) {

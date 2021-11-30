@@ -6,13 +6,13 @@ import java.util.List;
 
 public class GrupoCartas {
 
-	private List<CartaImpl> cartas = new ArrayList<>();
+	private List<Carta> cartas = new ArrayList<>();
 
 	public GrupoCartas() {
 		super();
 	}
 
-	public List<CartaImpl> getCartasEnBaraja() {
+	public List<Carta> getCartasEnBaraja() {
 		return cartas;
 	}
 
